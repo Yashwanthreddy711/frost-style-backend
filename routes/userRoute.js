@@ -8,12 +8,12 @@ router.post('/',async(req,res)=>{
       try{
             const userData=new User(data);
             const response=await userData.save();
-            console.log("Data saved");
+            //console.log("Data saved");
             res.status(200).json(response);
 
       }
       catch(err){
-            console.log("Error",err);
+            //console.log("Error",err);
             res.status(500).json({error:"Internal Server Error"});   
       }
 })
@@ -21,12 +21,12 @@ router.get('/users',async(req,res)=>{
     
     try{
           const data=await User.find();
-          console.log("Data saved");
+         // console.log("Data saved");
           res.status(200).json(data);
 
     }
     catch(err){
-          console.log("Error",err);
+         // console.log("Error",err);
           res.status(500).json({error:"Internal Server Error"});   
     }
 })
@@ -34,7 +34,7 @@ router.get('/users',async(req,res)=>{
 
 router.post('/login',(req,res)=>{
       const {email,password}=req.body;
-      console.log(email,password);
+      //console.log(email,password);
        User.findOne({email:email}).then((user)=>{
             if(user){
                   if(user.password===password){
