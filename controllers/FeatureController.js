@@ -1,7 +1,7 @@
 const Collection = require("../models/Collection");
 const User = require("../models/User");
 
-const stripe = require('stripe')(process.env.STRIPE_KEY);
+const stripe = require("stripe")("sk_test_51Oej5MSCLWGe4NcCLrb9SX5pjvPm1c8Ktds0e88Sbr2ssV9gI1w2Fbhzc6Ltbj7h0KLqdAPWH5a1d7fM8YvLbOzV00ZgeKBH1h");
 const addToCart = async (req, res) => {
   const userId = req.params.id;
   const { id, name, price, image, quantity } = req.body;
