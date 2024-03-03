@@ -15,7 +15,7 @@ const { verifyToken } = require('./middlewares/verifyToken');
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["https://frost-style.netlify.app"],
     credentials:true,
 }));
 app.use(cookieParser())
