@@ -13,6 +13,14 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true,
+    },
+    cartItems:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"collection",
+    },
+    otp:{
+        type:Number,
+        default:0,
     }
 })
 
