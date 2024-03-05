@@ -200,6 +200,7 @@ const checkout= async (req, res) => {
                 currency: "inr",
                 product_data: {
                     name: product.name,
+                    size:product.size,
                     images:[product.url]
                 },
                 unit_amount: product.price*100,
