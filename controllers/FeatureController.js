@@ -201,10 +201,9 @@ const checkout= async (req, res) => {
                 product_data: {
                     name: product.name,
                     size:product.size,
-                    qty:product.qty,
                     images:[product.url]
                 },
-                unit_amount: product.price*qty* 100,
+                unit_amount: product.price*100,
             },
             quantity: product.qty,
         }));
