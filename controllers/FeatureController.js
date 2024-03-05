@@ -200,9 +200,11 @@ const checkout= async (req, res) => {
                 currency: "inr",
                 product_data: {
                     name: product.name,
+                    size:product.size,
+                    qty:product.qty,
                     images:[product.url]
                 },
-                unit_amount: product.price * 100,
+                unit_amount: product.price*qty* 100,
             },
             quantity: product.qty,
         }));
@@ -210,8 +212,8 @@ const checkout= async (req, res) => {
             payment_method_types: ["card"],
             line_items: lineItems,
             mode: 'payment',
-            success_url: `${YOUR_DOMAIN}/success`,
-            cancel_url: `${YOUR_DOMAIN}/cancel`,
+            // success_url: `${YOUR_DOMAIN}/success`,
+            // cancel_url: `${YOUR_DOMAIN}/cancel`,
         }); 
         
         res.json({ id: session.id });
