@@ -210,8 +210,8 @@ const checkout= async (req, res) => {
             payment_method_types: ["card"],
             line_items: lineItems,
             mode: 'payment',
-            // success_url: `${YOUR_DOMAIN}/success`,
-            // cancel_url: `${YOUR_DOMAIN}/cancel`,
+            success_url: `${YOUR_DOMAIN}/success`,
+            cancel_url: `${YOUR_DOMAIN}/cancel`,
         }); 
         
         res.json({ id: session.id });
