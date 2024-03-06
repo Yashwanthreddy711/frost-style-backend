@@ -9,7 +9,7 @@ dotenv.config();
 
 const signup = async (req, res) => {
   const { email, password, name } = req.body;
-  console.log(email,password,name);
+  //console.log(email,password,name);
   try {
     let user = await User.findOne({ email });
 

@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const secretKey = process.env.JWT_SECRET;
-console.log(secretKey);
+//console.log(secretKey);
 function setUser(user) {
     try {
         return jwt.sign(user, secretKey);
